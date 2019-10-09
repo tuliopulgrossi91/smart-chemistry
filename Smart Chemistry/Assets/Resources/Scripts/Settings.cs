@@ -5,11 +5,10 @@ public class Settings : MonoBehaviour
 {
     #region DEFAULT
     private AudioClip[] auClipMusic; // array of music
-    private AudioClip[] auClipSfx = new AudioClip[8]; // audios sfx  
+    private AudioClip auClipSfx0, auClipSfx1, auClipSfx2; // sfx audios
     [Header("0 - AudioSource Music"), Space(1), Header("1 - AudioSource Sfx"), Space(1), Header("2 - Toggle Music"), Space(1), Header("3 - Toggle Sfx"), Space(1), Header("4 - Slider Music"), Space(1), Header("5 - Slider Sfx")]
     public GameObject[] stMasterManager; // settings master manager
     public static bool check_Music; // check play music
-    private static int random_Sfx; // random sfx (audio)
 
     void Start()
     {
@@ -73,7 +72,7 @@ public class Settings : MonoBehaviour
                     PlayerPrefs.SetInt("AUDIO", 1);
                     stMasterManager[1].GetComponent<AudioSource>().mute = false;
                     stMasterManager[1].GetComponent<AudioSource>().playOnAwake = true;
-                    stMasterManager[1].GetComponent<AudioSource>().PlayOneShot(auClipSfx[random_Sfx]);
+                    stMasterManager[1].GetComponent<AudioSource>().PlayOneShot(auClipSfx0);
                     stMasterManager[5].GetComponent<Slider>().interactable = true;
                 }
                 break;
@@ -131,18 +130,12 @@ public class Settings : MonoBehaviour
         stMasterManager[0].GetComponent<AudioSource>();
         stMasterManager[1].GetComponent<AudioSource>();
         auClipMusic = Resources.LoadAll<AudioClip>("Audios/Musics");
-
-        for (int i = 0; i < auClipSfx.Length; i++)
-        {
-            auClipSfx[i] = Resources.Load<AudioClip>("Audios/Sfxs/Clicks/" + i + "");
-        }
-
-        random_Sfx = Random.Range(0, auClipSfx.Length);
-        AudioClip sfx = auClipSfx[random_Sfx];
-
         stMasterManager[0].GetComponent<AudioSource>().clip = auClipMusic[Random.Range(0, auClipMusic.Length)];
         stMasterManager[0].GetComponent<AudioSource>().Play();
         check_Music = true;
+        auClipSfx0 = Resources.Load<AudioClip>("Audios/Sfxs/Clicks/0"); // click
+        auClipSfx1 = Resources.Load<AudioClip>("Audios/Sfxs/Clicks/1"); // score
+        auClipSfx2 = Resources.Load<AudioClip>("Audios/Sfxs/Clicks/2"); // error
     }
     #endregion
 }

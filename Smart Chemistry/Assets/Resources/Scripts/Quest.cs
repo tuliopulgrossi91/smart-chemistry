@@ -11,7 +11,7 @@ public class Quest : MonoBehaviour
     void Start()
     {
         finish = false;
-        text_Quest_1.text = "Questão X";
+        text_Quest_1.text = "???";
         text_Quest_2.text = "" + count_Quest.ToString() + "/10";
     }
 

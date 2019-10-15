@@ -4,13 +4,19 @@ using UnityEngine.UI;
 
 public class Levels : MonoBehaviour
 {
-    public GameObject Questions, Pause, Settings, Results;
+    public GameObject LevelManager, Questions, Pause, Settings, Results;
     public static string btn_name;
+
+    // level game
+    public void LevelGame(bool l)
+    {
+        LevelManager.SetActive(l);
+    }
 
     // questions game
     public void QuestionsGame(bool q)
     {
-        Questions.SetActive(true);
+        Questions.SetActive(q);
     }
 
     // settings game
@@ -42,6 +48,7 @@ public class Levels : MonoBehaviour
         // game finish - show results
         if (Quest.finish == true)
         {
+            Questions.SetActive(false);
             Results.SetActive(true);
         }
     }

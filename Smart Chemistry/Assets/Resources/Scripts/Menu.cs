@@ -3,28 +3,29 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    private bool check;
-    public GameObject Levels, Settings, Credits;
+    public GameObject MenuManager, Settings, Credits;
 
-    public void Select(int s)
+    // menu game
+    public void MenuGame(bool m)
     {
-        switch (s)
-        {
-            case 0: // levels 
-                check = !check;
-                Levels.SetActive(check);
-                break;
-            case 1: // settings
-                check = !check;
-                Settings.SetActive(check);
-                break;
-            case 2: // credits
-                check = !check;
-                Credits.SetActive(check);
-                break;
-            case 3: // load scene
-                SceneManager.LoadScene(1);
-                break;
-        }
+        MenuManager.SetActive(m);
+    }
+
+    // settings game
+    public void SettingsGame(bool s)
+    {
+        Settings.SetActive(s);
+    }
+
+    // credits game
+    public void CreditsGame(bool c)
+    {
+        Credits.SetActive(c);
+    }
+
+    // load level
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(1);
     }
 }

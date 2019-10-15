@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 51a1c8353661ea742a8ddc728868a23f
+guid: 63e4e86e0102aff4196c133e072403f5
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Sniglet
+  fontName: KenVector Future Thin
   fontNames:
-  - Sniglet
+  - KenVector Future Thin
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

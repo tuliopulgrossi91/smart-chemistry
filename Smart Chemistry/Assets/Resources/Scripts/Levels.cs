@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Levels : MonoBehaviour
 {
     public GameObject LevelManager, Questions, Pause, Settings, Results;
-    public static string btn_name;
+    public static int x;
 
     // level game
     public void LevelGame(bool l)
@@ -25,10 +24,10 @@ public class Levels : MonoBehaviour
         Settings.SetActive(s);
     }
 
-    // get name of button
-    public void CheckButton(Text t)
+    // get number of button
+    public void CheckButton(int i)
     {
-        btn_name = t.text;
+        x = i;
     }
 
     // pause game
@@ -41,6 +40,12 @@ public class Levels : MonoBehaviour
     public void BackMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    // retry game
+    public void RetryGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void Update()

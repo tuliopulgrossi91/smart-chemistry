@@ -47,7 +47,7 @@ public class Quest : MonoBehaviour
         if (q < 10)
         {
             QuestList();
-            CheckRandom();
+            //CheckRandom();
         }
     }
 
@@ -212,6 +212,7 @@ public class Quest : MonoBehaviour
         if (q < 10)
         {
             q++;
+            CheckRandom();
         }
     }
 

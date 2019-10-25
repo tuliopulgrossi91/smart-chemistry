@@ -2,7 +2,7 @@
 public class List
 {
     #region Elements List
-    public static string[] numbers = new string[10] { "Qual o número atômico do hidrogênio ?", 
+    public static string[] numbers = new string[10] { "Qual o número atômico do hidrogênio ?",
                                                       "Qual dos elementos possui número atômico igual a 16?",
                                                       "Sabendo que o número atômico do sódio é 11 e o elemento cloro encontra-se no mesmo período e na família VIIA. Determine o número atômico do cloro.",
                                                       "Qual o número atômico do Carbono ?",
@@ -45,10 +45,20 @@ public class List
     public static string[] names_alt1 = new string[10] { "Helio", "Polônio", "Cobre", "Cobalto", "Neônio", "Carbono", "Fósforo", "Nitrogênio", "Cálcio", "Mercúrio" }; // alternativas 1
     public static string[] names_alt2 = new string[10] { "Háfnio", "Chumbo", "Cobalto", "Lítio", "Nióbio", "Potássio", "Ferro", "Hidrogênio", "Criptônio", "Platina" }; // alternativas 2
 
-    public static int[] mass = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; // perguntas
-    public static string[] mass_right = new string[10] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }; // corretas
-    public static string[] mass_alt1 = new string[10] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }; // alternativas 1
-    public static string[] mass_alt2 = new string[10] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" }; // alternativas 2
+    public static string[] mass = new string[10] { "Qual é a massa do hidrogênio, sabendo que a quantidade de neutrons é 0?",
+                                                   "Qual é a massa do sódio, sabendo que a quantidade de neutrons é 12?",
+                                                   "Qual é a massa do carbono, sabendo que a quantidade de neutrons é 6?",
+                                                   "Qual é a massa do potássio, sabendo que a quantidade de neutrons é 20?",
+                                                   "Qual é a massa do oxigênio, sabendo que a quantidade de neutrons é 8?",
+                                                   "Qual é a massa do fósforo, sabendo que a quantidade de neutrons é 16?",
+                                                   "Qual é a massa do enxofre, sabendo que a quantidade de neutrons é 16?",
+                                                   "Qual é a massa do hélio, sabendo que a quantidade de neutrons é 2?",
+                                                   "Qual é a massa do nitrogênio, sabendo que a quantidade de neutrons é 7?",
+                                                   "Qual é a massa do cloro, sabendo que a quantidade de neutrons é 18?",
+                                                }; // perguntas
+    public static string[] mass_right = new string[10] { "1", "23", "12", "39", "16", "31", "32", "4", "14", "35" }; // corretas
+    public static string[] mass_alt1 = new string[10] { "2", "24", "6", "19", "8", "15", "31", "2", "7", "17" }; // alternativas 1
+    public static string[] mass_alt2 = new string[10] { "3", "22", "7", "29", "32", "16", "30", "3", "28", "18" }; // alternativas 2
 
     public static string[] period = new string[10] { "Em qual período encontra-se o elemento Hidrogênio?",
                                                      "Em qual período encontra-se o elemento Potássio?",

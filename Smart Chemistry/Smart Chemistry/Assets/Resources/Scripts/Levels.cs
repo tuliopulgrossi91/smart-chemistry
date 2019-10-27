@@ -8,46 +8,25 @@ public class Levels : MonoBehaviour
     public static int x;
 
     // level game
-    public void LevelGame(bool l)
-    {
-        LevelManager.SetActive(l);
-    }
+    public void LevelGame(bool l) => LevelManager.SetActive(l);
 
     // questions game
-    public void QuestionsGame(bool q)
-    {
-        Questions.SetActive(q);
-    }
+    public void QuestionsGame(bool q) => Questions.SetActive(q);
 
     // settings game
-    public void SettingsGame(bool s)
-    {
-        Settings.SetActive(s);
-    }
+    public void SettingsGame(bool s) => Settings.SetActive(s);
 
     // get number of button
-    public void CheckButton(int i)
-    {
-        x = i;
-    }
+    public void CheckButton(int i) => x = i;
 
     // pause game
-    public void OnApplicationPause(bool pause)
-    {
-        Pause.SetActive(pause);
-    }
+    public void OnApplicationPause(bool pause) => Pause.SetActive(pause);
 
     // back menu
-    public void BackMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
+    public void BackMenu() => SceneManager.LoadScene(0);
 
     // retry game
-    public void RetryGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    public void RetryGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     void Update()
     {

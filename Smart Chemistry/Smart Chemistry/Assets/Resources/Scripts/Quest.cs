@@ -10,7 +10,7 @@ public class Quest : MonoBehaviour
     private int q; // question list
     public static bool finish; // check finish game
     public static int r; // random number select
-    public int score_0, score_1, score_2, score_3, score_4, score_5, record_0, record_1, record_2, record_3, record_4, record_5, i; // score and record game 
+    public int score_0, score_1, score_2, score_3, score_4, score_5, record_0, record_1, record_2, record_3, record_4, record_5; // score and record game 
 
     void Start()
     {
@@ -21,101 +21,35 @@ public class Quest : MonoBehaviour
         record_4 = PlayerPrefs.GetInt("Record4");
         record_5 = PlayerPrefs.GetInt("Record5");
 
-        count_Quest = 1;
+        count_Quest = 0;
+        QuestList();
         CheckRandom();
         finish = false;
-        text_Quest_2.text = "" + count_Quest.ToString() + "/10";
+        text_Quest_2.text = "" + count_Quest.ToString() + "/9";
     }
 
     void Update()
     {
-        i = Levels.x;
-
         switch (Levels.x)
         {
             case 0: // Level 0
                 text_Quest_0.text = "Números";
-
-                if (score_0 > record_0)
-                {
-                    record_0 = score_0;
-                    PlayerPrefs.SetInt("Record0", record_0);
-                }
-
-                text_Score.text = "Pontos:  " + score_0;
-                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record0");
-
                 break;
             case 1: // Level 1
                 text_Quest_0.text = "Símbolos";
-
-                if (score_1 > record_1)
-                {
-                    record_1 = score_1;
-                    PlayerPrefs.SetInt("Record1", record_1);
-                }
-
-                text_Score.text = "Pontos:  " + score_1;
-                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record1");
-
                 break;
             case 2: // Level 2
                 text_Quest_0.text = "Nomes";
-
-                if (score_2 > record_2)
-                {
-                    record_2 = score_2;
-                    PlayerPrefs.SetInt("Record2", record_2);
-                }
-
-                text_Score.text = "Pontos:  " + score_2;
-                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record2");
-
                 break;
             case 3: // Level 3
                 text_Quest_0.text = "Massa Atômica";
-
-                if (score_3 > record_3)
-                {
-                    record_3 = score_3;
-                    PlayerPrefs.SetInt("Record3", record_3);
-                }
-
-                text_Score.text = "Pontos:  " + score_3;
-                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record3");
-
                 break;
             case 4: // Level 4
                 text_Quest_0.text = "Período";
-
-                if (score_4 > record_4)
-                {
-                    record_4 = score_4;
-                    PlayerPrefs.SetInt("Record4", record_4);
-                }
-
-                text_Score.text = "Pontos:  " + score_4;
-                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record4");
-
                 break;
             case 5: // Level 5
                 text_Quest_0.text = "Família";
-
-                if (score_5 > record_5)
-                {
-                    record_5 = score_5;
-                    PlayerPrefs.SetInt("Record5", record_5);
-                }
-
-                text_Score.text = "Pontos:  " + score_5;
-                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record5");
                 break;
-        }
-
-        if (q < 10)
-        {
-            QuestList();
-            CheckRandom();
         }
     }
 
@@ -255,20 +189,92 @@ public class Quest : MonoBehaviour
     void NextQuest()
     {
         count_Quest++;
-        text_Quest_2.text = "" + count_Quest.ToString() + "/10";
+        text_Quest_2.text = "" + count_Quest.ToString() + "/9";
 
-        if (count_Quest > 10)
+        if (count_Quest > 9)
         {
             finish = true;
+
+            if (Levels.x == 0)
+            {
+                if (score_0 > record_0)
+                {
+                    record_0 = score_0;
+                    PlayerPrefs.SetInt("Record0", record_0);
+                }
+
+                text_Score.text = "Pontos:  " + score_0;
+                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record0"); 
+            }
+
+            if (Levels.x == 1)
+            {
+                if (score_1 > record_1)
+                {
+                    record_1 = score_1;
+                    PlayerPrefs.SetInt("Record1", record_1);
+                }
+
+                text_Score.text = "Pontos:  " + score_1;
+                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record1");
+            }
+
+            if (Levels.x == 2)
+            {
+                if (score_2 > record_2)
+                {
+                    record_2 = score_2;
+                    PlayerPrefs.SetInt("Record2", record_2);
+                }
+
+                text_Score.text = "Pontos:  " + score_2;
+                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record2");
+            }
+
+            if (Levels.x == 3)
+            {
+                if (score_3 > record_3)
+                {
+                    record_3 = score_3;
+                    PlayerPrefs.SetInt("Record3", record_3);
+                }
+
+                text_Score.text = "Pontos:  " + score_3;
+                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record3");
+            }
+
+            if (Levels.x == 4)
+            {
+                if (score_4 > record_4)
+                {
+                    record_4 = score_4;
+                    PlayerPrefs.SetInt("Record4", record_4);
+                }
+
+                text_Score.text = "Pontos:  " + score_4;
+                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record4");
+            }
+
+            if (Levels.x == 5)
+            {
+                if (score_5 > record_5)
+                {
+                    record_5 = score_5;
+                    PlayerPrefs.SetInt("Record5", record_5);
+                }
+
+                text_Score.text = "Pontos:  " + score_5;
+                text_Record.text = "Totais: " + PlayerPrefs.GetInt("Record5");
+            }
         }
         else
         {
+            if (q < 10)
+            {
+                q++;
+            }
+
             QuestList();
-            CheckRandom();
-        }
-        if (q < 10)
-        {
-            q++;
             CheckRandom();
         }
     }

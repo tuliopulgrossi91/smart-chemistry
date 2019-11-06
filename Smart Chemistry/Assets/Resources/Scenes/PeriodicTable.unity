@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -461.7, y: 8}
+  m_AnchoredPosition: {x: -30, y: 8}
   m_SizeDelta: {x: -971.6, y: 8.610046}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &436243064
@@ -661,6 +661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfe1e5092c5af243970267e5a989929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ElementDrag: {fileID: 436243062}
+  transformParent: {fileID: 1671732791}
 --- !u!4 &1142761648
 Transform:
   m_ObjectHideFlags: 0

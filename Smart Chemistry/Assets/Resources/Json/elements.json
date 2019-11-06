@@ -1,13 +1,25 @@
 {
-	"elements": [
-	
-					{
-						"name": "hydrogen",
-						"atomicNumber": 1,
-						"symbol": "H",
-						"startPosition": "Vector2(0,1)"
-					}
-	
-	
-				]
+  "elements": [
+
+    {
+      "name": "Hidrogênio",
+      "atomicNumber": 1,
+      "symbol": "H",
+      "startPosition": "Vector2(0,1)"
+    },
+    {
+      "name": "Hélio",
+      "atomicNumber": 2,
+      "symbol": "He",
+      "startPosition": "Vector2(0,1)"
+    },
+    {
+      "name": "Lítio",
+      "atomicNumber": 3,
+      "symbol": "Li",
+      "startPosition": "Vector2(0,1)"
+    }
+
+
+  ]
 }

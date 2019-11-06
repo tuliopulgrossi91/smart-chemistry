@@ -4,8 +4,9 @@ using UnityEngine.UI;
 public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static GameObject itemBeingDragged;
-    Vector3 startPosition;
-
+    public Vector3 startPosition;
+    public Vector3 endPosition;
+    public GameObject element;
     #region IBeginDragHandler implementation
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -31,8 +32,20 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         itemBeingDragged = null;
-        Debug.Log(GameObject.FindGameObjectWithTag("element").transform.localPosition);
-        // transform.position = startPosition;
+        Debug.Log(element.transform.position);
+        Debug.Log(endPosition.x + 1);
+        Debug.Log(transform.position);
+        if ((transform.position.x < endPosition.x+10 && transform.position.x > endPosition.x - 10) && (transform.position.y < endPosition.y + 15 && transform.position.y > endPosition.y - 15))
+        {
+            transform.position = endPosition;
+            element.transform.GetChild(1).GetComponent<Text>().text = gameObject.transform.GetChild(0).GetComponent<Text>().text;
+            Destroy(gameObject);
+
+        } else
+        {
+            transform.position = startPosition;
+        }
+       
 
     }
 

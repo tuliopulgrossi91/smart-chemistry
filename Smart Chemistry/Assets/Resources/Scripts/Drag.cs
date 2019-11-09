@@ -4,14 +4,28 @@ using UnityEngine.UI;
 public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static GameObject itemBeingDragged;
-    public Vector3 startPosition;
-    public Vector3 endPosition;
+    private Vector3 startPosition;
+    private Vector3 endPosition;
     public GameObject element;
+    private Element elemento;
     #region IBeginDragHandler implementation
+
+
+    private void Start()
+    {
+
+
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log(gameObject.GetComponentInChildren<Text>().name);
+
+        if (gameObject.activeSelf)
+        {
+            this.elemento = ElementsService.findBySymbol(gameObject.transform.GetChild(0).GetComponent<Text>().text);
+            this.endPosition = ElementsService.convertStringtoVector3(this.elemento.startPosition);
+            this.element = GameObject.Find(this.elemento.symbol);
+        }
         itemBeingDragged = gameObject;
         startPosition = transform.position;
     }
@@ -32,9 +46,6 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         itemBeingDragged = null;
-        Debug.Log(element.transform.position);
-        Debug.Log(endPosition.x + 1);
-        Debug.Log(transform.position);
         if ((transform.position.x < endPosition.x+10 && transform.position.x > endPosition.x - 10) && (transform.position.y < endPosition.y + 15 && transform.position.y > endPosition.y - 15))
         {
             transform.position = endPosition;

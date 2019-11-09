@@ -8,7 +8,7 @@ public class Element
 {
     public int atomicNumber;
     public string symbol;
-    public Vector2 initialPosition;
+    public string startPosition;
     public string name;
 
 
